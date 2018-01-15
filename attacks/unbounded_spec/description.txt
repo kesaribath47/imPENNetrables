@@ -1,0 +1,1 @@
+The test includes commands to repeat depositing and checking balance with large numbers, then withdraw until zero balance. Failure indicates that the bank server mis-handles potentially large amount.

@@ -1,0 +1,8 @@
+{
+    "type": "confidentiality",
+    "target_team": 9,
+    "inputs": [
+        {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "%ACCOUNT%", "-n", "10.0"],"base64":false},
+        {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "%ACCOUNT%", "-d", "%AMOUNT%"],"base64":false}
+    ]
+}

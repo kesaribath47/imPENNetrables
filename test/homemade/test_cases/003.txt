@@ -1,0 +1,405 @@
+{
+    "description":"Test ATM amount argument parser",
+    "mute":true,
+    "input":[
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003-01", "-n", "10"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003-02", "-n", "010.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003-02", "-n", "abc"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003-03", "-n", "-10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003-04", "-n", "0x2a"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003-05", "-n", "4294967296.00"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003-06", "-n", "0"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003-07", "-n", "0.00"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003-08", "-n", "9.99"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003-09", "-n", "4294967295.99"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-n", "10.00"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-n", "20.00"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-d", "10"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-d", "abc"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-d", "010.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-d", "-10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-d", "0x2a"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-d", "4294967296.00"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-d", "0"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-d", "0.00"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-d", "0.01"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-d", "10.00"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-d", "4294967295.99"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-w", "10"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-w", "abc"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-w", "010.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-w", "-10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-w", "0x2a"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-w", "4294967296.00"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-w", "0"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-w", "0.00"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-w", "0.01"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-w", "10000.00"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-g"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-w", "4294967295.99"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-g"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-d", "20000.00"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-g"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-w", "4294967295.99"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-003", "-g"]}
+            ],
+    "output":[
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "account": "impenn-003-09",
+                     "initial_balance": 4.29496729599e9
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "account": "impenn-003-09",
+                     "initial_balance": 4.29496729599e9
+                   }
+                 }
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "account": "impenn-003",
+                     "initial_balance": 10
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "account": "impenn-003",
+                     "initial_balance": 10
+                   }
+                 }
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "account": "impenn-003",
+                     "deposit": 1.0e-2
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "account": "impenn-003",
+                     "deposit": 1.0e-2
+                   }
+                 }
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "account": "impenn-003",
+                     "deposit": 10
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "account": "impenn-003",
+                     "deposit": 10
+                   }
+                 }
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "account": "impenn-003",
+                     "deposit": 4.29496729599e9
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "account": "impenn-003",
+                     "deposit": 4.29496729599e9
+                   }
+                 }
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "account": "impenn-003",
+                     "withdraw": 1.0e-2
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "account": "impenn-003",
+                     "withdraw": 1.0e-2
+                   }
+                 }
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "account": "impenn-003",
+                     "withdraw": 10000
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "account": "impenn-003",
+                     "withdraw": 10000
+                   }
+                 }
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "balance": 4.29495731599e9,
+                     "account": "impenn-003"
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "balance": 4.29495731599e9,
+                     "account": "impenn-003"
+                   }
+                 }
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "balance": 4.29495731599e9,
+                     "account": "impenn-003"
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "balance": 4.29495731599e9,
+                     "account": "impenn-003"
+                   }
+                 }
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "account": "impenn-003",
+                     "deposit": 20000
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "account": "impenn-003",
+                     "deposit": 20000
+                   }
+                 }
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "balance": 4.29497731599e9,
+                     "account": "impenn-003"
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "balance": 4.29497731599e9,
+                     "account": "impenn-003"
+                   }
+                 }
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "account": "impenn-003",
+                     "withdraw": 4.29496729599e9
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "account": "impenn-003",
+                     "withdraw": 4.29496729599e9
+                   }
+                 }
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "balance": 10020,
+                     "account": "impenn-003"
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "balance": 10020,
+                     "account": "impenn-003"
+                   }
+                 }
+               }
+             ]
+}

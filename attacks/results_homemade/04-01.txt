@@ -1,0 +1,58 @@
+*** RUNNING TEST CASE 001 ***
+Description: Given test cases
+
+BANK will run at 127.0.0.1 on port 14459 with auth file bank-83de770c-70b6-4348-8352-0343bb8ca557.auth
+BANK started!
+
+BANK stopped!
+*** RUNNING TEST CASE 002 ***
+Description: Test BANK/ATM ip/port argument parser
+
+BANK will run at 127.0.0.1 on port 14737 with auth file bank-39c8ff9e-db61-4321-81c6-9779e405f4c4.auth
+BANK started!
+
+BANK stopped!
+*** RUNNING TEST CASE 003 ***
+Description: Test ATM amount argument parser
+
+BANK will run at 127.0.0.1 on port 46571 with auth file bank-34c02919-be57-49db-a1a6-4ca88f6effd4.auth
+BANK started!
+
+BANK stopped!
+*** RUNNING TEST CASE 004 ***
+Description: Test file name/account name argument parser
+
+BANK will run at 127.0.0.1 on port 30887 with auth file bank-f21d4724-a623-40a0-a09a-9aeb0e2cee57.auth
+BANK started!
+
+BANK stopped!
+*** RUNNING TEST CASE 005 ***
+Description: Test ATM mode of operation
+
+BANK will run at 127.0.0.1 on port 12795 with auth file bank-900e1b73-5c70-43ed-b802-d5fa47189e34.auth
+BANK started!
+
+BANK stopped!
+*** RUNNING TEST CASE 006 ***
+Description: Unbounded amount testing
+
+BANK will run at 127.0.0.1 on port 62450 with auth file bank-55293653-9076-4fc9-ab4e-34b2f2b1de32.auth
+BANK started!
+
+BANK stopped!
+*** RUNNING TEST CASE 007 ***
+Description: Security test cases
+
+BANK will run at 127.0.0.1 on port 17040 with auth file bank-8ea33e1b-e703-43bc-9891-10f960078a53.auth
+BANK started!
+
+BANK stopped!
+
+*** FAILED SUMMARY ***
+Test #0: []
+Test #1: [0, 1, 2, 10, 11]
+Test #2: []
+Test #3: []
+Test #4: []
+Test #5: []
+Test #6: []

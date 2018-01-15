@@ -1,0 +1,1 @@
+The test includes command with several loopback addresses. Failure indicates that the bank server doesn't bind to any host.

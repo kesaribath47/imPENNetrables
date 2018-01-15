@@ -1,0 +1,638 @@
+*** RUNNING TEST CASE 001 ***
+Description: Given test cases
+
+BANK will run at 127.0.0.1 on port 19588 with auth file bank-18ff4ef2-250b-461f-9fc3-8d72d8c77ced.auth
+BANK started!
+
+++ Command #0 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'ted', u'-n', u'10.30'], u'base64': False}
+- Output: {u'atm': {u'output': {u'account': u'ted', u'initial_balance': 10.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'ted', u'initial_balance': 10.3}}}
+<!!> TEST COMMAND #0 PASSED!
+
+++ Command #1 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'ted', u'-d', u'5.00']}
+- Output: {u'atm': {u'output': {u'account': u'ted', u'deposit': 5}, u'exit': 0}, u'bank': {u'output': {u'account': u'ted', u'deposit': 5}}}
+<!!> TEST COMMAND #1 PASSED!
+
+++ Command #2 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'ted', u'-g']}
+- Output: {u'atm': {u'output': {u'account': u'ted', u'balance': 15.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'ted', u'balance': 15.3}}}
+<!!> TEST COMMAND #2 PASSED!
+
+++ Command #3 ++
+- Input : {u'input': [u'LXA=', u'JVBPUlQl', u'LWk=', u'JUlQJQ==', u'LWE=', u'dGVk', u'LWc='], u'base64': True}
+- Output: {u'atm': {u'output': {u'account': u'ted', u'balance': 15.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'ted', u'balance': 15.3}}}
+<!!> TEST COMMAND #3 PASSED!
+
+BANK stopped!
+*** RUNNING TEST CASE 002 ***
+Description: Test BANK/ATM ip/port argument parser
+
+BANK will run at 127.0.0.1 on port 55542 with auth file bank-3d29c1c3-aae8-4658-9b96-1e3f938bb3ff.auth
+BANK started!
+
+++ Command #0 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'256.0.0.1', u'-a', u'impenn-002', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #0 PASSED!
+
+++ Command #1 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'127.256.0.1', u'-a', u'impenn-002', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #1 PASSED!
+
+++ Command #2 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'127.0.256.1', u'-a', u'impenn-002', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #2 PASSED!
+
+++ Command #3 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'127.0.0.256', u'-a', u'impenn-002', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #3 PASSED!
+
+++ Command #4 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'127.0.0.1a', u'-a', u'impenn-002', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #4 PASSED!
+
+++ Command #5 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'127.0.0.1@', u'-a', u'impenn-002', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #5 PASSED!
+
+++ Command #6 ++
+- Input : {u'input': [u'-p', u'1023', u'-i', u'127.0.0.1', u'-a', u'impenn-002', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #6 PASSED!
+
+++ Command #7 ++
+- Input : {u'input': [u'-p', u'65536', u'-i', u'127.0.0.1', u'-a', u'impenn-002', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #7 PASSED!
+
+++ Command #8 ++
+- Input : {u'input': [u'-p', u'a', u'-i', u'127.0.0.1', u'-a', u'impenn-002', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #8 PASSED!
+
+++ Command #9 ++
+- Input : {u'input': [u'-p', u'@', u'-i', u'127.0.0.1', u'-a', u'impenn-002', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #9 PASSED!
+
+++ Command #10 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'127.0.0.255', u'-a', u'impenn-002', u'-n', u'10.30']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-002', u'initial_balance': 10.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-002', u'initial_balance': 10.3}}}
+<!!> TEST COMMAND #10 PASSED!
+
+++ Command #11 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'127.0.0.254', u'-a', u'impenn-002-02', u'-n', u'10.30']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-002-02', u'initial_balance': 10.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-002-02', u'initial_balance': 10.3}}}
+<!!> TEST COMMAND #11 PASSED!
+
+BANK stopped!
+*** RUNNING TEST CASE 003 ***
+Description: Test ATM amount argument parser
+
+BANK will run at 127.0.0.1 on port 22414 with auth file bank-c9e51515-c165-49d9-86e6-81cbdeaf2058.auth
+BANK started!
+
+++ Command #0 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003-01', u'-n', u'10']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #0 PASSED!
+
+++ Command #1 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003-02', u'-n', u'010.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #1 PASSED!
+
+++ Command #2 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003-02', u'-n', u'abc']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #2 PASSED!
+
+++ Command #3 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003-03', u'-n', u'-10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #3 PASSED!
+
+++ Command #4 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003-04', u'-n', u'0x2a']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #4 PASSED!
+
+++ Command #5 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003-05', u'-n', u'4294967296.00']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #5 PASSED!
+
+++ Command #6 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003-06', u'-n', u'0']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #6 PASSED!
+
+++ Command #7 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003-07', u'-n', u'0.00']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #7 PASSED!
+
+++ Command #8 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003-08', u'-n', u'9.99']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #8 PASSED!
+
+++ Command #9 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003-09', u'-n', u'4294967295.99']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-003-09', u'initial_balance': 4294967295.99}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-003-09', u'initial_balance': 4294967295.99}}}
+<!!> TEST COMMAND #9 PASSED!
+
+++ Command #10 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-n', u'10.00']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-003', u'initial_balance': 10}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-003', u'initial_balance': 10}}}
+<!!> TEST COMMAND #10 PASSED!
+
+++ Command #11 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-n', u'20.00']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #11 PASSED!
+
+++ Command #12 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-d', u'10']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #12 PASSED!
+
+++ Command #13 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-d', u'abc']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #13 PASSED!
+
+++ Command #14 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-d', u'010.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #14 PASSED!
+
+++ Command #15 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-d', u'-10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #15 PASSED!
+
+++ Command #16 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-d', u'0x2a']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #16 PASSED!
+
+++ Command #17 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-d', u'4294967296.00']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #17 PASSED!
+
+++ Command #18 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-d', u'0']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #18 PASSED!
+
+++ Command #19 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-d', u'0.00']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #19 PASSED!
+
+++ Command #20 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-d', u'0.01']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-003', u'deposit': 0.01}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-003', u'deposit': 0.01}}}
+<!!> TEST COMMAND #20 PASSED!
+
+++ Command #21 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-d', u'10.00']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-003', u'deposit': 10}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-003', u'deposit': 10}}}
+<!!> TEST COMMAND #21 PASSED!
+
+++ Command #22 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-d', u'4294967295.99']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-003', u'deposit': 4294967295.99}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-003', u'deposit': 4294967295.99}}}
+<!!> TEST COMMAND #22 PASSED!
+
+++ Command #23 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-w', u'10']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #23 PASSED!
+
+++ Command #24 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-w', u'abc']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #24 PASSED!
+
+++ Command #25 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-w', u'010.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #25 PASSED!
+
+++ Command #26 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-w', u'-10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #26 PASSED!
+
+++ Command #27 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-w', u'0x2a']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #27 PASSED!
+
+++ Command #28 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-w', u'4294967296.00']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #28 PASSED!
+
+++ Command #29 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-w', u'0']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #29 PASSED!
+
+++ Command #30 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-w', u'0.00']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #30 PASSED!
+
+++ Command #31 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-w', u'0.01']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-003', u'withdraw': 0.01}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-003', u'withdraw': 0.01}}}
+<!!> TEST COMMAND #31 PASSED!
+
+++ Command #32 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-w', u'10000.00']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-003', u'withdraw': 10000}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-003', u'withdraw': 10000}}}
+<!!> TEST COMMAND #32 PASSED!
+
+++ Command #33 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-g']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-003', u'balance': 4294957315.99}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-003', u'balance': 4294957315.99}}}
+<!!> TEST COMMAND #33 PASSED!
+
+++ Command #34 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-w', u'4294967295.99']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #34 PASSED!
+
+++ Command #35 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-g']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-003', u'balance': 4294957315.99}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-003', u'balance': 4294957315.99}}}
+<!!> TEST COMMAND #35 PASSED!
+
+++ Command #36 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-d', u'20000.00']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-003', u'deposit': 20000}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-003', u'deposit': 20000}}}
+<!!> TEST COMMAND #36 PASSED!
+
+++ Command #37 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-g']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-003', u'balance': 4294977315.99}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-003', u'balance': 4294977315.99}}}
+<!!> TEST COMMAND #37 PASSED!
+
+++ Command #38 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-w', u'4294967295.99']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-003', u'withdraw': 4294967295.99}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-003', u'withdraw': 4294967295.99}}}
+<!!> TEST COMMAND #38 PASSED!
+
+++ Command #39 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-003', u'-g']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-003', u'balance': 10020}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-003', u'balance': 10020}}}
+<!!> TEST COMMAND #39 PASSED!
+
+BANK stopped!
+*** RUNNING TEST CASE 004 ***
+Description: Test file name/account name argument parser
+
+BANK will run at 127.0.0.1 on port 9877 with auth file bank-65bca828-bf8b-45d9-b0a4-bb4734a398d9.auth
+BANK started!
+
+++ Command #0 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-c', u'ABC', u'-a', u'impenn-004', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #0 PASSED!
+
+++ Command #1 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-c', u'card@', u'-a', u'impenn-004', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #1 PASSED!
+
+++ Command #2 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-c', u'.', u'-a', u'impenn-004', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #2 PASSED!
+
+++ Command #3 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-c', u'..', u'-a', u'impenn-004', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #3 PASSED!
+
+++ Command #4 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-c', u'abcdefghijklmnopqrstuvwxyz_-0123456789.card', u'-a', u'impenn-004-01', u'-n', u'10.30']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-004-01', u'initial_balance': 10.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-004-01', u'initial_balance': 10.3}}}
+<!!> TEST COMMAND #4 PASSED!
+
+++ Command #5 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-c', u'0', u'-a', u'impenn-004-02', u'-n', u'10.30']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-004-02', u'initial_balance': 10.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-004-02', u'initial_balance': 10.3}}}
+<!!> TEST COMMAND #5 PASSED!
+
+++ Command #6 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-c', u'0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234', u'-a', u'impenn-004-03', u'-n', u'10.30']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-004-03', u'initial_balance': 10.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-004-03', u'initial_balance': 10.3}}}
+<!!> TEST COMMAND #6 PASSED!
+
+++ Command #7 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-c', u'01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345', u'-a', u'impenn-004-04', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #7 PASSED!
+
+++ Command #8 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'ABC', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #8 PASSED!
+
+++ Command #9 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'account@', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #9 PASSED!
+
+++ Command #10 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'abcdefghijklmnopqrstuvwxyz_-.0123456789', u'-n', u'10.30']}
+- Output: {u'atm': {u'output': {u'account': u'abcdefghijklmnopqrstuvwxyz_-.0123456789', u'initial_balance': 10.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'abcdefghijklmnopqrstuvwxyz_-.0123456789', u'initial_balance': 10.3}}}
+<!!> TEST COMMAND #10 PASSED!
+
+++ Command #11 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'.', u'-n', u'10.30']}
+- Output: {u'atm': {u'output': {u'account': u'.', u'initial_balance': 10.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'.', u'initial_balance': 10.3}}}
+<!!> TEST COMMAND #11 PASSED!
+
+++ Command #12 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'..', u'-n', u'10.30']}
+- Output: {u'atm': {u'output': {u'account': u'..', u'initial_balance': 10.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'..', u'initial_balance': 10.3}}}
+<!!> TEST COMMAND #12 PASSED!
+
+++ Command #13 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'0', u'-n', u'10.30']}
+- Output: {u'atm': {u'output': {u'account': u'0', u'initial_balance': 10.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'0', u'initial_balance': 10.3}}}
+<!!> TEST COMMAND #13 PASSED!
+
+++ Command #14 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789', u'-n', u'10.30']}
+- Output: {u'atm': {u'output': {u'account': u'01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789', u'initial_balance': 10.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789', u'initial_balance': 10.3}}}
+<!!> TEST COMMAND #14 PASSED!
+
+++ Command #15 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #15 PASSED!
+
+BANK stopped!
+*** RUNNING TEST CASE 005 ***
+Description: Test ATM mode of operation
+
+BANK will run at 127.0.0.1 on port 44507 with auth file bank-5ebf0121-3232-47a8-9a4a-f030332a4004.auth
+BANK started!
+
+++ Command #0 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-01', u'-n']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #0 PASSED!
+
+++ Command #1 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-02', u'-n', u'10.30', u'-d']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #1 PASSED!
+
+++ Command #2 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-03', u'-n', u'10.30', u'-d', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #2 PASSED!
+
+++ Command #3 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-04', u'-n', u'10.30', u'-w']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #3 PASSED!
+
+++ Command #4 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-05', u'-n', u'10.30', u'-w', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #4 PASSED!
+
+++ Command #5 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-06', u'-n', u'10.30', u'-g']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #5 PASSED!
+
+++ Command #6 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-07', u'-n', u'10.30']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-005-07', u'initial_balance': 10.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-005-07', u'initial_balance': 10.3}}}
+<!!> TEST COMMAND #6 PASSED!
+
+++ Command #7 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-07', u'-d']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #7 PASSED!
+
+++ Command #8 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-07', u'-d', u'10.30', u'-n']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #8 PASSED!
+
+++ Command #9 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-07', u'-d', u'10.30', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #9 PASSED!
+
+++ Command #10 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-07', u'-d', u'10.30', u'-w']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #10 PASSED!
+
+++ Command #11 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-07', u'-d', u'10.30', u'-w', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #11 PASSED!
+
+++ Command #12 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-07', u'-d', u'10.30', u'-g']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #12 PASSED!
+
+++ Command #13 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-07', u'-w']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #13 PASSED!
+
+++ Command #14 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-07', u'-w', u'10.30', u'-n']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #14 PASSED!
+
+++ Command #15 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-07', u'-w', u'10.30', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #15 PASSED!
+
+++ Command #16 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-07', u'-w', u'10.30', u'-d']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #16 PASSED!
+
+++ Command #17 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-07', u'-w', u'10.30', u'-d', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #17 PASSED!
+
+++ Command #18 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-07', u'-w', u'10.30', u'-g']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #18 PASSED!
+
+++ Command #19 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-07', u'-g']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-005-07', u'balance': 10.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-005-07', u'balance': 10.3}}}
+<!!> TEST COMMAND #19 PASSED!
+
+++ Command #20 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-005-07', u'-g', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #20 PASSED!
+
+++ Command #21 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #21 PASSED!
+
+++ Command #22 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-s', u'-a', u'impenn-005-08', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #22 PASSED!
+
+++ Command #23 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'-a', u'impenn-005-09', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #23 PASSED!
+
+++ Command #24 ++
+- Input : {u'input': [u'-p', u'-i', u'%IP%', u'-s', u'-a', u'impenn-005-10', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #24 PASSED!
+
+++ Command #25 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'-n', u'10.30', u'impenn-005-1']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #25 PASSED!
+
+++ Command #26 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #26 PASSED!
+
+++ Command #27 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-d', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #27 PASSED!
+
+++ Command #28 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-w', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #28 PASSED!
+
+++ Command #29 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-g']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #29 PASSED!
+
+BANK stopped!
+*** RUNNING TEST CASE 006 ***
+Description: Unbounded amount testing
+
+BANK will run at 127.0.0.1 on port 60970 with auth file bank-b33d4ca9-4c84-4a1a-8067-5366a2aac0e6.auth
+BANK started!
+
+BANK stopped!
+*** RUNNING TEST CASE 007 ***
+Description: Security test cases
+
+BANK will run at 127.0.0.1 on port 34818 with auth file bank-289efbb4-7ef8-420f-8afe-268d1661d0cb.auth
+BANK started!
+
+++ Command #0 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-007-01', u'-g']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #0 PASSED!
+
+++ Command #1 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-c', u'impenn-007.card', u'-a', u'impenn-007-01', u'-n', u'10.30']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-007-01', u'initial_balance': 10.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-007-01', u'initial_balance': 10.3}}}
+<!!> TEST COMMAND #1 PASSED!
+
+++ Command #2 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-007-01', u'-d', u'20.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #2 PASSED!
+
+++ Command #3 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-c', u'impenn-007.card', u'-a', u'impenn-007-01', u'-d', u'100.00']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-007-01', u'deposit': 100}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-007-01', u'deposit': 100}}}
+<!!> TEST COMMAND #3 PASSED!
+
+++ Command #4 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-007-01', u'-g']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #4 PASSED!
+
+++ Command #5 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-c', u'impenn-007.card', u'-a', u'impenn-007-01', u'-g']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-007-01', u'balance': 110.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-007-01', u'balance': 110.3}}}
+<!!> TEST COMMAND #5 PASSED!
+
+++ Command #6 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-007-02', u'-n', u'30.30']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-007-02', u'initial_balance': 30.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-007-02', u'initial_balance': 30.3}}}
+<!!> TEST COMMAND #6 PASSED!
+
+++ Command #7 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-a', u'impenn-007-02', u'-n', u'1000.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #7 PASSED!
+
+++ Command #8 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-c', u'impenn-007.card', u'-a', u'impenn-007-02', u'-g']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #8 PASSED!
+
+++ Command #9 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-c', u'impenn-007.card', u'-a', u'impenn-007-02', u'-d', u'40.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #9 PASSED!
+
+++ Command #10 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-c', u'impenn-007.card', u'-a', u'impenn-007-02', u'-w', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #10 PASSED!
+
+++ Command #11 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-c', u'impenn-007-02.card', u'-a', u'impenn-007-02', u'-g']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-007-02', u'balance': 30.3}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-007-02', u'balance': 30.3}}}
+<!!> TEST COMMAND #11 PASSED!
+
+++ Command #12 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-c', u'impenn-007-02.card', u'-a', u'impenn-007-02', u'-d', u'500.00']}
+- Output: {u'atm': {u'output': {u'account': u'impenn-007-02', u'deposit': 500}, u'exit': 0}, u'bank': {u'output': {u'account': u'impenn-007-02', u'deposit': 500}}}
+<!!> TEST COMMAND #12 PASSED!
+
+++ Command #13 ++
+- Input : {u'input': [u'-p', u'%PORT%', u'-i', u'%IP%', u'-c', u'impenn-007.card', u'-a', u'impenn-007-03', u'-n', u'10.30']}
+- Output: {u'atm': {u'exit': 255}, u'bank': {}}
+<!!> TEST COMMAND #13 PASSED!
+
+BANK stopped!
+
+*** FAILED SUMMARY ***
+Test #0: []
+Test #1: []
+Test #2: []
+Test #3: []
+Test #4: []
+Test #5: []
+Test #6: []

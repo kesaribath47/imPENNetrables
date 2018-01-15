@@ -1,0 +1,236 @@
+{
+    "description":"Test ATM mode of operation",
+    "mute":true,
+    "input":[
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-01", "-n"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-02", "-n", "10.30", "-d"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-03", "-n", "10.30", "-d", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-04", "-n", "10.30", "-w"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-05", "-n", "10.30", "-w", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-06", "-n", "10.30", "-g"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-07", "-n", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-07", "-d"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-07", "-d", "10.30", "-n"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-07", "-d", "10.30", "-n", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-07", "-d", "10.30", "-w"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-07", "-d", "10.30", "-w", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-07", "-d", "10.30", "-g"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-07", "-w"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-07", "-w", "10.30", "-n"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-07", "-w", "10.30", "-n", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-07", "-w", "10.30", "-d"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-07", "-w", "10.30", "-d", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-07", "-w", "10.30", "-g"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-07", "-g"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-005-07", "-g", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "-n", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-s", "-a", "impenn-005-08", "-n", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "-a", "impenn-005-09", "-n", "10.30"]},
+                {"input":["-p", "-i", "%IP%", "-s", "-a", "impenn-005-10", "-n", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "-n", "10.30", "impenn-005-1"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-n", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-d", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-w", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-g"]}
+            ],
+    "output":[
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "account": "impenn-005-07",
+                     "initial_balance": 10.3
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "account": "impenn-005-07",
+                     "initial_balance": 10.3
+                   }
+                 }
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "balance": 10.3,
+                     "account": "impenn-005-07"
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "balance": 10.3,
+                     "account": "impenn-005-07"
+                   }
+                 }
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               },
+               {
+                 "atm": {
+                   "exit": 255
+                 },
+                 "bank": {}
+               }
+             ]
+}

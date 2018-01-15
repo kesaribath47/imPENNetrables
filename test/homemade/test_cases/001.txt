@@ -1,0 +1,72 @@
+{
+    "description":"Given test cases",
+    "mute":true,
+    "input":[
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "ted", "-n", "10.30"],"base64":false},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "ted", "-d", "5.00"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "ted", "-g"]},
+                {"input":["LXA=", "JVBPUlQl", "LWk=", "JUlQJQ==", "LWE=", "dGVk", "LWc="],"base64":true}
+            ],
+    "output":[
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "account": "ted",
+                     "initial_balance": 10.3
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "account": "ted",
+                     "initial_balance": 10.3
+                   }
+                 }
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "account": "ted",
+                     "deposit": 5
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "account": "ted",
+                     "deposit": 5
+                   }
+                 }
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "balance": 15.3,
+                     "account": "ted"
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "balance": 15.3,
+                     "account": "ted"
+                   }
+                 }
+               },
+               {
+                 "atm": {
+                   "exit": 0,
+                   "output": {
+                     "balance": 15.3,
+                     "account": "ted"
+                   }
+                 },
+                 "bank": {
+                   "output": {
+                     "balance": 15.3,
+                     "account": "ted"
+                   }
+                 }
+               }
+             ]
+}

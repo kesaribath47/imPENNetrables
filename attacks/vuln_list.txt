@@ -1,0 +1,7 @@
+Potential Attacks:
+
+* bindall_spec:
+Vuln teams: 04, 05
+
+* unbounded_spec:
+Vuln teams: 05 (failed)
