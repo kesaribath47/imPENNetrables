@@ -1,0 +1,8 @@
+{
+    "type": "integrity",
+    "target_team": 4,
+    "inputs": [
+        {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-replay-01", "-n", "10.00"]},
+        {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-replay-01", "-d", "10.00"]}
+    ]
+}

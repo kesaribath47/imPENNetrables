@@ -1,0 +1,1 @@
+The MITM replays a previous legitimate deposit command. If the oracle results are different from the victim, the attack demonstrates that the victim bank executed the replayed command (vulnerable to replay attack).

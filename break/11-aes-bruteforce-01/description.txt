@@ -1,0 +1,1 @@
+MITM to fast brute-force AES-CBC encryption with chosen plaintext attack due to insufficient IV initialization. The general idea is that the main message encryption won't change overtime with a given command. With carefully padded the known plaintext over the AES block size, brute-force is done iterately for each digit of the unknown amount with max 90 attempts.

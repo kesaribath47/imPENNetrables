@@ -1,0 +1,1 @@
+MITM to fast brute-force 3-DES encryption with chosen ciphertext attack due to insufficient IV initialization and padding. The general idea is that the main message encryption won't change overtime with a given command. With carefully padded the known plaintext over the 3-DES block size, brute-force is done iterately for each digit of the unknown amount.

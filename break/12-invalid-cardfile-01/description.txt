@@ -1,0 +1,1 @@
+If a creating request is made for an exist account with custom cardfile, ATM won't remove the temporary file.

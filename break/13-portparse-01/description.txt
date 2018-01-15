@@ -1,0 +1,1 @@
+The test includes command with invalid bank port. Failure indicates that the atm returns incorrect error code (63 instead of 255).

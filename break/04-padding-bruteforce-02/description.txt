@@ -1,0 +1,1 @@
+MITM to brute-force encryption with chosen plaintext attack due to non-padding. The general idea is that DES has a fixed block size, which potentially leaks the plain text length if carefully pad the message to align with DES block size. With carefully padded the known plaintext over the 3-DES block size, brute-force is done iterately for each digit of the unknown amount.

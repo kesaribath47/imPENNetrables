@@ -1,0 +1,9 @@
+{
+    "type": "correctness",
+    "target_team": 12,
+    "inputs": [
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn", "-n", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-c", "impenn-01.card", "-a", "impenn", "-n", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-c", "impenn-01.card", "-a", "impenn-01", "-n", "10.30"]}
+            ]
+}

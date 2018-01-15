@@ -1,0 +1,9 @@
+{
+    "type": "integrity",
+    "target_team": 13,
+    "inputs": [
+        {"input":["-p", "%PORT%", "-i", "%IP%", "-c", "real.card", "-a", "hacker", "-n", "10.30"]},
+        {"input":["-p", "%PORT%", "-i", "%IP%", "-c", "this.card", "-a", "real", "-n", "10.30"]},
+        {"input":["-p", "%PORT%", "-i", "%IP%", "-c", "real.card", "-a", "real", "-w", "10.00"]}
+    ]
+}

@@ -1,0 +1,1 @@
+-g option with extra parameters is not handled correctly. Should return 255.

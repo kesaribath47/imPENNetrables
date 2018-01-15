@@ -1,0 +1,20 @@
+{
+    "type": "correctness",
+    "target_team": 9,
+    "inputs": [
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-007-01", "-g"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-c", "impenn-007.card", "-a", "impenn-007-01", "-n", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-007-01", "-d", "20.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-c", "impenn-007.card", "-a", "impenn-007-01", "-d", "100.00"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-007-01", "-g"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-c", "impenn-007.card", "-a", "impenn-007-01", "-g"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-007-02", "-n", "30.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-a", "impenn-007-02", "-n", "1000.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-c", "impenn-007.card", "-a", "impenn-007-02", "-g"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-c", "impenn-007.card", "-a", "impenn-007-02", "-d", "40.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-c", "impenn-007.card", "-a", "impenn-007-02", "-w", "10.30"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-c", "impenn-007-02.card", "-a", "impenn-007-02", "-g"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-c", "impenn-007-02.card", "-a", "impenn-007-02", "-d", "500.00"]},
+                {"input":["-p", "%PORT%", "-i", "%IP%", "-c", "impenn-007.card", "-a", "impenn-007-03", "-n", "10.30"]}
+            ]
+}

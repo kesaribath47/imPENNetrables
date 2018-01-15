@@ -1,0 +1,1 @@
+The test includes command with invalid cardfile then valid cardfile queries. Failure indicates that the atm doesn't correctly rollback during invalid cardfile handling.
